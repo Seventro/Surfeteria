@@ -354,7 +354,7 @@ public class Everyplay : MonoBehaviour
             {
                 Dictionary<string, object> dict = new Dictionary<string, object>();
                 dict.Add(key, val);
-                EveryplaySetMetadata(Json.Serialize(dict));
+              //  EveryplaySetMetadata(Json.Serialize(dict));
             }
 #endif
         }
@@ -369,7 +369,7 @@ public class Everyplay : MonoBehaviour
             {
                 if (dict.Count > 0)
                 {
-                    EveryplaySetMetadata(Json.Serialize(dict));
+                   // EveryplaySetMetadata(Json.Serialize(dict));
                 }
             }
 #endif
