@@ -20,7 +20,7 @@
 
 #import "AppDelegateListener.h"
 //#include "UnityTrampolineConfigure.h"
-//#include "RegisterMonoModules.h"
+#include "RegisterMonoModules.h"
 
 //if we are on a version of unity that has the version number defined use it, otherwise we have added it ourselves in the post build step
 #if HAS_UNITY_VERSION_DEF
