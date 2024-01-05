@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using Facebook.Unity;
+//using Facebook.Unity;
 
 public class PageAchievement : MonoBehaviour
 {
@@ -20,21 +20,22 @@ public class PageAchievement : MonoBehaviour
     public Vector3 pointListCountry = Vector3.zero;
     public Vector3 pointListWorld = Vector3.zero;
     public Vector3 pointListMultiplayer = Vector3.zero;
-    private FacebookController fbController;
+    //private FacebookController fbController;
     private GameObject panelTopCountry;//list hien thi xep hang dat nuoc
     private GameObject panelTopWorld;//list hien thi xep hang the gioi
     private GameObject panelTopMultiplayer;//list hien thi xep hang Multiplayer
     private GameObject mainCharacter;
 
-	public void CallStart () {
+    public void CallStart()
+    {
         ChangeAllLanguage();
         float scoreNow = Modules.totalScore;
-		float coinNow = Modules.totalCoin;
+        float coinNow = Modules.totalCoin;
         CancelInvoke("BlinkDoubleCoin");
-        if(Modules.showScorePlay)
+        if (Modules.showScorePlay)
         {
             scoreNow = Modules.scorePlayer;
-			coinNow = Modules.coinPlayer;
+            coinNow = Modules.coinPlayer;
             doubleCoin.interactable = true;
             Invoke("BlinkDoubleCoin", 0f);
         }
@@ -88,36 +89,38 @@ public class PageAchievement : MonoBehaviour
             panelLoadingD.transform.GetComponent<TextLoading>().CallStart();
         }
         else panelLoadingD.SetActive(false);
-#if !(UNITY_WEBPLAYER || UNITY_WEBGL || UNITY_STANDALONE_WIN || UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR)
-        ButtonTopCountryClick();
-        panelFBLogin.SetActive(true);
-#else
-        //xu ly xep hang facebook
-        if (fbController == null) fbController = Modules.facebookController.GetComponent<FacebookController>();
-		fbController.isPostDone = false;
-		fbController.isGetDone = false;
-        fbController.getEnemy = false;
-		if (fbController.panelGetInfo != null)
-			Destroy(fbController.panelGetInfo);
-        if (FB.IsLoggedIn)
-        {
-            panelFBLogin.SetActive(false);
-            panelLoadingA.SetActive(true);
-            panelLoadingA.transform.GetComponent<TextLoading>().CallStart();
-        }
-        else
-        {
-            panelFBLogin.SetActive(true);
-            panelLoadingA.SetActive(false);
-        }
-        Invoke("PostScoreFacebook", 0f);
-        Invoke("GetScoreFacebook", 0f);
-        InvokeRepeating("GetBoardScoreFacebook", 0f, 1f);
-#endif
-        //xu ly xep hang quoc gia va the gioi
-        if (Modules.containAchievement.activeSelf) StartCoroutine(PostScore());
-        Invoke("PostScoreWorld", 0f);
-	}
+        /*#if !(UNITY_WEBPLAYER || UNITY_WEBGL || UNITY_STANDALONE_WIN || UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR)
+                ButtonTopCountryClick();
+                panelFBLogin.SetActive(true);
+        #else
+                //xu ly xep hang facebook
+                if (fbController == null) fbController = Modules.facebookController.GetComponent<FacebookController>();
+                fbController.isPostDone = false;
+                fbController.isGetDone = false;
+                fbController.getEnemy = false;
+                if (fbController.panelGetInfo != null)
+                    Destroy(fbController.panelGetInfo);
+                if (FB.IsLoggedIn)
+                {
+                    panelFBLogin.SetActive(false);
+                    panelLoadingA.SetActive(true);
+                    panelLoadingA.transform.GetComponent<TextLoading>().CallStart();
+                }
+                else
+                {
+                    panelFBLogin.SetActive(true);
+                    panelLoadingA.SetActive(false);
+                }
+                Invoke("PostScoreFacebook", 0f);
+                Invoke("GetScoreFacebook", 0f);
+                InvokeRepeating("GetBoardScoreFacebook", 0f, 1f);
+        #endif
+                //xu ly xep hang quoc gia va the gioi
+                if (Modules.containAchievement.activeSelf) StartCoroutine(PostScore());
+                Invoke("PostScoreWorld", 0f);
+            }
+        */
+    }
 
     void OnDisable()
     {
@@ -175,7 +178,7 @@ public class PageAchievement : MonoBehaviour
 
     void PostScoreFacebook()
     {
-        if (FB.IsLoggedIn)
+      /*  if (FB.IsLoggedIn)
         {
 			fbAvatar.sprite = Modules.fbMyAvatar;
             fbName.text = Modules.fbName;
@@ -184,20 +187,23 @@ public class PageAchievement : MonoBehaviour
             fbController.PostScore(true);
         }
         else Invoke("PostScoreFacebook", 1f);
+      */
     }
 
     void GetScoreFacebook()
     {
-        if (fbController.isPostDone)
+      /*  if (fbController.isPostDone)
         {
             fbController.GetScores();
             fbController.isPostDone = false;
         }
         else Invoke("GetScoreFacebook", 1f);
+      */
     }
 
     void GetBoardScoreFacebook()
     {
+        /*
         if (fbController.panelGetInfo == null || !fbController.isGetDone) return;
         GameObject listFriend = fbController.panelGetInfo;
         listFriend.transform.position = pointListFriend;
@@ -205,6 +211,7 @@ public class PageAchievement : MonoBehaviour
         panelFBLogin.SetActive(false);
         panelLoadingA.SetActive(false);
         fbController.isGetDone = false;
+        */
     }
 
     void PostScoreWorld()
@@ -526,7 +533,7 @@ public class PageAchievement : MonoBehaviour
         return;
 #endif
         Modules.PlayAudioClipFree(Modules.audioButton);
-        fbController.FBlogin();
+      //  fbController.FBlogin();
     }
 
     public void ButtonTopFacebookClick()

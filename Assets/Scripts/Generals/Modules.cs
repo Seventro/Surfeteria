@@ -232,7 +232,7 @@ public class Modules : MonoBehaviour {
         ResetMissions();
         ResetChallenge();
         if (panelCrackGlass) panelCrackGlass.gameObject.SetActive(false);
-        listResources.GetComponent<LoadListEnemy>().CallStart();
+       // listResources.GetComponent<LoadListEnemy>().CallStart();
         panelHighScoreNow.SetActive(false);
         panelViewEnemy.SetActive(false);
         panelBonus.SetActive(false);
@@ -1349,11 +1349,11 @@ public class Modules : MonoBehaviour {
         string Info = AllLanguages.menuInforStart[indexLanguage] + " " + totalScore + " " + AllLanguages.menuInforEnd[indexLanguage];
         string Title = "Fruntastic Squad Run";
         string Description = AllLanguages.menuInforDetail[indexLanguage] + ". " + Info;
-        Facebook.Unity.FB.ShareLink(new Uri(linkChange + linkStoreGame), Title, Description, new Uri(linkIconGame), RewardShareFB);
+      //  Facebook.Unity.FB.ShareLink(new Uri(linkChange + linkStoreGame), Title, Description, new Uri(linkIconGame), RewardShareFB);
     }
 
     private static string codeHeroReward = "002";
-    private static void RewardShareFB(Facebook.Unity.IShareResult result)
+ /*   private static void RewardShareFB(Facebook.Unity.IShareResult result)
     {
         //mo khoa Stela
         if (!listHeroUnlock.Contains(codeHeroReward))
@@ -1362,6 +1362,9 @@ public class Modules : MonoBehaviour {
             SaveListHeroUnlock();
         }
     }
+
+    */
+
 
     public static bool CheckReceivedFB()
     {

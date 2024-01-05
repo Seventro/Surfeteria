@@ -727,13 +727,13 @@ public class PageMainGame : MonoBehaviour {
         Modules.PlayAudioClipFree(Modules.audioButton);
         if (Modules.coinMaxInvite <= 0)//neu da moi nhan thuong roi thi cho moi luon, khong thuong
         {
-            Facebook.Unity.FB.AppRequest(
+           /* Facebook.Unity.FB.AppRequest(
                 AllLanguages.menuMessageInvite[Modules.indexLanguage],
-                null, null, null, 100, string.Empty, AllLanguages.menuTitleInvite[Modules.indexLanguage], null);
+                null, null, null, 100, string.Empty, AllLanguages.menuTitleInvite[Modules.indexLanguage], null); */
         }
         else
         {
-            inviteFBBox.GetComponent<MessageInviteFB>().StartShowMessage();
+           // inviteFBBox.GetComponent<MessageInviteFB>().StartShowMessage();
             inviteFBBox.SetActive(true);
             inviteFBBox.GetComponent<Animator>().SetTrigger("TriOpen");
         }
