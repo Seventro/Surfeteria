@@ -755,6 +755,7 @@ public class PageMainGame : MonoBehaviour {
     private int statusRecord = 0;//0 stop, 1 start, 2 pause
     public void ButtonRecord()
     {
+        /*
         if (statusRecord == 0)//dang stop
         {
             if (Recorder.Instance.StartRecord())
@@ -779,29 +780,30 @@ public class PageMainGame : MonoBehaviour {
                 imgRecordIcon.color = colorRecordStart;
             }
         }
+        */
     }
 
     public void ButtonStopRecord()
     {
-        if (Recorder.Instance.StopRecord())
+      /*  if (Recorder.Instance.StopRecord())
         {
             statusRecord = 0;
             imgRecordIcon.color = colorRecordStop;
-        }
+        } */
     }
 
     public void ButtonUploadVideo(GameObject myButton)  
     {
-        if (!Recorder.Instance.isAvailableVideo)
-        {
-            myButton.GetComponent<ButtonStatus>().Disable();
-            return;
-        }
-        if (Recorder.Instance.ShareRecord())
-        {
+    //    if (!Recorder.Instance.isAvailableVideo)
+      //  {
+    //        myButton.GetComponent<ButtonStatus>().Disable();
+       //     return;
+    //    }
+      //  if (Recorder.Instance.ShareRecord())
+      //  {
             statusRecord = 0;
             imgRecordIcon.color = colorRecordStop;
-        }
+       // }
     }
 
     //xu ly ngon ngu

@@ -1389,10 +1389,11 @@ public class Modules : MonoBehaviour {
 
     public static void SetStatusButShareVideo(GameObject objButton)
     {
-        if (!Recorder.Instance.isAvailableVideo)
+      /*  if (!Recorder.Instance.isAvailableVideo)
             objButton.GetComponent<ButtonStatus>().Disable();
         else
             objButton.GetComponent<ButtonStatus>().Enable();
+      */
     }
 
     public static void RewardKeysSkis()
