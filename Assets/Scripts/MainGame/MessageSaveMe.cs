@@ -117,23 +117,27 @@ public class MessageSaveMe : MonoBehaviour {
 
     public void WatchAd(bool obj) {
 
-        if (Modules.RewardReborn())
+        if (obj)
         {
 
-            transform.gameObject.GetComponent<Animator>().SetTrigger("TriClose");
-            tunTime = 0;
-            mesShow = false;
-            EnableButtonStatus(button2);
-            ResetText(button2);
-            
-
-            if (Modules.chance == 4)
+            if (Modules.RewardReborn())
             {
 
-                DisableButtonStatus(button2);
-                // myButton.GetComponent<ButtonStatus>().Disable();
-                // return;
+                transform.gameObject.GetComponent<Animator>().SetTrigger("TriClose");
+                tunTime = 0;
+                mesShow = false;
+                EnableButtonStatus(button2);
+                ResetText(button2);
 
+
+                if (Modules.chance == 4)
+                {
+
+                    DisableButtonStatus(button2);
+                    // myButton.GetComponent<ButtonStatus>().Disable();
+                    // return;
+
+                }
             }
         }
     }
