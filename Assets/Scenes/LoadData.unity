@@ -322,11 +322,9 @@ MonoBehaviour:
   bannerAndroid: ca-app-pub-3940256099942544/6300978111
   bannerIOS: ca-app-pub-1260508947508198/7055116468
   interstitialAndroid: ca-app-pub-3940256099942544/1033173712
-  interstitialIOS: ca-app-pub-1260508947508198/3962049264
-  nativeAndroid: ca-app-pub-3940256099942544/2247696110
-  nativeIOS: ca-app-pub-3940256099942544/2562852117
+  interstitialIOS: ca-app-pub-3940256099942544/4411468910
   rewardAndroid: ca-app-pub-3940256099942544/5224354917
-  rewardIOS: ca-app-pub-1260508947508198/6462148465
+  rewardIOS: ca-app-pub-3940256099942544/1712485313
 --- !u!114 &135483080
 MonoBehaviour:
   m_ObjectHideFlags: 0
