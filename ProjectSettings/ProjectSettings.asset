@@ -640,7 +640,7 @@ PlayerSettings:
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 1
   cameraUsageDescription: nothing
-  locationUsageDescription: nothing
+  locationUsageDescription: For setting up the game language according to your region.
   microphoneUsageDescription: nothing
   bluetoothUsageDescription: 
   macOSTargetOSVersion: 10.13.0
